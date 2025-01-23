@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--Necessary tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Name Generator</title>
+
+    <!--Linked stylesheets and scripts-->
+    <link href="namegen-styles.css" rel="stylesheet">
+    <script src="namegen-scripts.js" defer></script>
+    <!--jQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <!--Fonts-->
+
+    <!--Favicon-->
+    <link rel="icon" type="image/x-icon" href="images/favicon.svg">
+    <!--Source: https://stock.adobe.com/images/cauldron-outline-icon/446587261?asset_id=446587261-->
+
+</head>
+<body>
+    <h1>Name Generator</h1>
+   
+    <div id="topgrid">
+        <section id="controls"> <!-- Controls for the generator -->
+            <h2>Controls</h2>
+
+            <div id="control-selections"> <!-- Controls for what type of names are generated -->
+            
+                <select name="starting-letter" id="starting-letter"> <!-- Select type of starting letter -->
+                    <option value="1">Start with vowels</option>
+                    <option value="2" selected>Start with consonants</option>
+                </select>
+
+                <select name="name-length" id="name-length"> <!-- Select name lengths -->
+                    <option value="2">2 letters long</option>
+                    <option value="3">3 letters long</option>
+                    <option value="4">4 letters long</option>
+                    <option value="5">5 letters long</option>
+                    <option value="6" selected>6 letters long</option>
+                    <option value="7">7 letters long</option>
+                    <option value="8">8 letters long</option>
+                </select>
+
+                <select name="name-amount" id="name-amount"> <!-- Select amount of names to generate -->
+                    <option value="1">1 name</option>
+                    <option value="2">2 names</option>
+                    <option value="3">3 names</option>
+                    <option value="4">4 names</option>
+                    <option value="5">5 names</option>
+                    <option value="6">6 names</option>
+                    <option value="7">7 names</option>
+                    <option value="8" selected>8 names</option>
+                </select>
+            </div>
+        
+            <button type="button" id="generate-names">Generate Names</button>
+        </section>
+
+        <section id="explanation"> <!--Explanation of how the controls work, as well as the save name and clear name functions.-->
+            <h2>Explanation</h2>
+            <p>Use the controls to select what type of letter you want the names to begin with, their length, and how many names you want to generate. You can click or tap on a name in the generated name list to save it and do the same to a name in the saved list to remove it.</p>
+
+            <p>This tool was made by Salem in 2024.</p>
+        </section>
+    </div>
+
+    <div id="bottomgrid">
+        <section id="generated-names-container">
+            <div id="generated-names">
+            <h2>Generated Names</h2>
+            <ul id="gen-names-grid"> <!--Generated names go here in a grid.-->
+            </ul>
+        </div>
+            <button type="button" id="save-all">Save All</button>
+    </section>
+
+
+    <section id="saved-names-container">
+        <div id="saved-names">
+            <h2>Saved Names</h2>
+            <ul id="saved-names-grid"> <!-- Saved names go here in a grid. This section is also scrollable on the y axis. -->
+            </ul>       
+        </div>
+            <button type="button" id="clear-all">Clear All</button> 
+    </section>
+</body>
+</html>

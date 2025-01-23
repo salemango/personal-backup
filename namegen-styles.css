@@ -1,0 +1,190 @@
+/*
+    Color Palette:
+        Light: #EDEAE0
+        Mid-Light: #DDCFBB
+        Mid: #B3936F
+        Darkest: #3D0C02  
+*/
+
+/* General styles */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    background-color: #EDEAE0;
+    color: #3D0C02;
+}
+
+section {
+    background-color: #DDCFBB;
+    padding: 2%;
+    margin: 5%;
+}
+
+h2 {
+    margin: .5%;
+    padding: 0;
+}
+
+button {
+    background-color: #B3936F;
+    font-size: 18pt;
+    border: none;
+    padding: 2% 10%;
+    margin: 2%;
+    margin-top: 5%;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+/* Controls section styling */
+
+#controls select {
+    display: block;
+    margin: 2% auto;
+    font-size: 15pt;
+    padding: 1%;
+    background-color: #EDEAE0;
+    color: #3D0C02;
+}
+
+/* Name grids section styling */
+#gen-names-grid, #saved-names-grid {
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: 40% 40%;
+    grid-gap: 5%;
+    width: 70%;
+    margin: 0 auto;
+}
+
+ul li {
+    padding-left: 0;
+    margin-left: 0;
+    font-size: 15pt;
+    margin: 2%;
+}
+
+ul li:first-letter { /* Capitalizes the first letter of every output to make them look like names */
+    text-transform: uppercase;
+}
+
+#gen-names-grid:nth-child(odd), #saved-names-grid:nth-child(odd) { /* Helps with grid alignment */
+    justify-self: right; 
+}
+
+#gen-names-grid:nth-child(even), #saved-names-grid:nth-child(even) { /* Helps with grid alignment */
+    justify-self: left;
+}
+
+#saved-names, #generated-names { /* Max height allows for a scroll function in the saved names section instead of a section growing progressively larger. */
+    height: 150px;
+}
+
+#saved-names {
+    overflow-y: scroll;
+}
+
+@media screen and (min-width: 600px) { /* Medium screens */
+    
+    /* General styles */
+    
+    h1 {
+        font-size: 30pt;
+    }
+
+    h2 {
+        font-size: 25pt;
+    }
+
+    select, option {
+        font-size: 12pt;
+    }
+
+    select {
+        border: 1px solid #3D0C02;
+    }
+
+    section ul li {
+        font-size: 18pt;
+    }
+
+    #topgrid { /* Turns the top two sections into a grid to save space */
+        display: grid;
+        grid-template-columns: 60% 40%;
+    }
+
+    /* Section styles */
+    #controls, #explanation {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    #explanation {
+        padding: 4%;
+    }
+
+    #bottomgrid { /* Turns the bottom two sections into a grid to save space */
+        display: grid;
+        grid-template-columns: 50% 50%;
+    }
+
+    /* Generated and saved names grid styling */
+    #gen-names-grid, #saved-names-grid {
+        grid-gap: 5%;
+        margin: 5% auto;
+    }
+
+    #saved-names, #generated-names {
+        height: 200px;
+    }
+
+}
+
+@media screen and (min-width: 1000px) { /* Large screens */
+    /* General styles */
+    select, option {
+        font-size: 15pt;
+        cursor: pointer;
+    }
+
+    /* Section styles */
+    #control-selections select {
+        display: inline-block;
+        margin: 1%;
+    }
+
+    #explanation p {
+        font-size: 15pt;
+    }
+
+    /* Saved name grid styles */
+    #gen-names-grid, #saved-names-grid {
+        grid-template-columns: auto auto auto auto;
+        margin-bottom: 2%;
+    }
+
+    #gen-names-grid li, #saved-names-grid li {
+        padding: 10%;
+        cursor: pointer;
+    }
+
+    #gen-names-grid li:hover, #saved-names-grid li:hover {
+        color: #B3936F;
+    }
+
+    #generated-names, #saved-names {
+        height: 200px;
+        scrollbar-color: #B3936F;
+    }
+
+    /* Style saved name scrollbar */
+    #saved-names::-webkit-scrollbar {
+        background-color: #DDCFBB;
+    }
+
+    #saved-names::-webkit-scrollbar-thumb {
+        background-color: #B3936F;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+}
